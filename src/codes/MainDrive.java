@@ -19,11 +19,19 @@ public class MainDrive {
 		
 		for(int i=0; i <myNumberArr.length; i++) {
 			
-//			내 번호를 자리에 입력받아 넣자. => Scanner 필요.
-//			몇번째 숫자? 안내문
+//			제대로 된 숫자가 들어올때까지 -> 각 숫자를 계속 반복으로 받아야함.
+			while(true) {
+				
+//				내 번호를 자리에 입력받아 넣자. => Scanner 필요. (밖에서 생성)
+//				몇번째 숫자? 안내문
+				
+				System.out.print((i+1) + "번째 숫자 입력 :");			
+				int inputNum = myScanner.nextInt();
+				
+				
+			}
 			
-			System.out.print((i+1) + "번째 숫자 입력 :");			
-			int inputNum = myScanner.nextInt();
+
 			
 			
 		}
