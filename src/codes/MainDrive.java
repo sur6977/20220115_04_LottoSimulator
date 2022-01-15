@@ -23,11 +23,17 @@ public class MainDrive {
 			while(true) {
 				
 //				내 번호를 자리에 입력받아 넣자. => Scanner 필요. (밖에서 생성)
-//				몇번째 숫자? 안내문
+//				몇번째 숫자? 안내문				
+				System.out.print((i+1) + "번째 숫자 입력 :");	
 				
-				System.out.print((i+1) + "번째 숫자 입력 :");			
+//				숫자 입력받기.
 				int inputNum = myScanner.nextInt();
 				
+//				1. 1~45의 범위인가?
+				boolean isRangeOk = (1 <= inputNum ) && (inputNum <= 45);
+ 				
+//				2. 이미 등록된 숫자가 아닌가 ? => 중복이 아닌가?
+//				1,2를 모두 통과하면 => 내 번호 배열에 등록 + 다음 숫자로 이동.
 				
 			}
 			
