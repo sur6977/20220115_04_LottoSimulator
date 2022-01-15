@@ -33,6 +33,24 @@ public class MainDrive {
 				boolean isRangeOk = (1 <= inputNum ) && (inputNum <= 45);
  				
 //				2. 이미 등록된 숫자가 아닌가 ? => 중복이 아닌가?
+				
+				boolean isDuplOk = true; // 일단 써도 된다고 전제 -> 중복임을 발견하면, 쓰면 안된다고 변경.
+				
+//				내 번호 목록을 돌아보다가 => 입력한 숫자와 같은게 있다면? => 이미 등록된 숫자.(중복) => 사용하면 안된다.
+				
+				for(int myNum : myNumberArr) {
+					
+//					내 번호와 입력번호가 같은가?
+					if(myNum == inputNum) {
+//						같은걸 발견! => 중복검사 통과 X
+						isDuplOk = false;
+						
+//						더이상 검사할 필요X
+						break;
+					}
+					
+				}
+				
 //				1,2를 모두 통과하면 => 내 번호 배열에 등록 + 다음 숫자로 이동.
 				
 				if(isRangeOk) {
