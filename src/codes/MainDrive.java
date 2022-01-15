@@ -100,6 +100,16 @@ public class MainDrive {
 				int randomNum = (int) (Math.random() *45 +1); // 캐스팅 (Casting) => int로 형 변환수행.
 				
 //				랜덤숫자 중복검사 수행.
+//				당첨번호에, 랜덤숫자와 같은게 있다면 ? 중복검사 탈락.
+				boolean isDuplOk = true; 
+				
+				for(int winNum : winNumberArr) {
+					if(winNum == randomNum) {
+						isDuplOk = false;
+						break;
+					}
+				}
+				
 //				중복검사에만 통과하면, 다음 숫자.
 				
 			}
