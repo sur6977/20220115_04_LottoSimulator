@@ -125,6 +125,33 @@ public class MainDrive {
 			
 		}
 		
+//		당첨번호 오름차순 정렬 - Bubble Sort
+//		동작속도는 느리지만, 코딩하기가 편한 로직.
+		
+		for(int i=0; i< winNumberArr.length ; i++) {
+			
+			
+//			j가 5인 경우 => j+1은 6임. => 배열 범위를 벗어남.
+//			j가 길이보다 2개 적은값 까지만 돌도록.
+			for(int j=0; j<winNumberArr.length-1; j++) {
+				
+//				이어져있는 2개의 숫자를 비교, 숫자가 잘못되어있다면 바꿔주자.		
+				
+				if(winNumberArr[j] > winNumberArr[j+1]) {
+//					두 변수의 값을 교환.
+					int backUp = winNumberArr[j];
+					
+					winNumberArr[j] = winNumberArr[j+1];
+					
+					winNumberArr[j+1] = backUp;
+					
+				}
+				
+			}
+		}
+		
+		
+		
 //		확인용 - 당첨번호가 어떻게 나왔는지?
 		for(int winNum : winNumberArr) {
 			System.out.println(winNum);
