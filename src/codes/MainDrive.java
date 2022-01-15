@@ -1,5 +1,6 @@
 package codes;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class MainDrive {
@@ -125,6 +126,40 @@ public class MainDrive {
 			
 		}
 		
+//		당첨번호 6개는 뽑힌 상황.
+//		추가로 보너스번호도 뽑자 => 제대로 된 번호 하나가 나올때까지 반복.
+		
+//		보너스번호를 저장할 변수.
+		int bonusNum = 0;
+		
+//		써도 되는 값이 나올때까지 무한반복.
+		while(true){
+//			1~45의 랜덤값 추출.
+			int randomNum = (int)(Math.random() * 45 + 1);
+			
+//			기존 당첨번호와 중복되면 안됨. => 중복검사 필요
+			boolean isDuplOk = true;
+			
+			for(int winNum : winNumberArr) {
+				
+				if(winNum == randomNum) {
+					isDuplOk = false;
+					break;
+				}
+			}
+			if(isDuplOk) {
+//				보너스번호로 지정
+				bonusNum = randomNum;
+				break;		// 다음로직으로 이동.		
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
 //		당첨번호 오름차순 정렬 - Bubble Sort
 //		동작속도는 느리지만, 코딩하기가 편한 로직.
 		
@@ -156,6 +191,8 @@ public class MainDrive {
 		for(int winNum : winNumberArr) {
 			System.out.println(winNum);
 		}
+//		확인용 - 보너스번호는?
+		System.out.println("보너스번호 : " + bonusNum);
 		
 //		등수 판정하기.
 		
@@ -186,7 +223,24 @@ public class MainDrive {
 		else if(correctCount == 5) {
 		
 		//보너스 번호를 맞췄는지 ? 추가 검사 필요.
-			System.out.println("임시-3등");
+			boolean isBonusCorrect = false; //내 번호중 하나가 보너스번호라면 true로 변경.
+			
+			for(int myNum : myNumberArr) {
+//				내 번호들을  => 보너스번호와 같은가?
+				if(myNum == bonusNum) {
+//					보너스번호를 맞춤!
+					isBonusCorrect = true;
+					break;
+				}
+			}
+//			보너스번호 맞춘 여부에 따른 등수 출력.
+			if(isBonusCorrect) {
+				System.out.println("2등");
+			}
+			else {
+				System.out.println("3등");
+			}
+			
 		}
 		else if(correctCount == 4) {
 			System.out.println("4등");
